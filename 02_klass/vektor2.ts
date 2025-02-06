@@ -20,6 +20,7 @@ class Vektor{
     skalaarkorrutis(teine:Vektor){
         return this.x*teine.x+this.y*teine.y;
     }
+}
     // Loo massiiv neljast vektorist
     // Leia nende kõigi summa
 let vektorid:Vektor[]=[

@@ -25,6 +25,19 @@ var Vektor = /** @class */ (function () {
     };
     return Vektor;
 }());
+// Loo massiiv neljast vektorist
+// Leia nende kõigi summa
+var vektorid = [
+    new Vektor(1, 3),
+    new Vektor(1, 5),
+    new Vektor(3, 3),
+    new Vektor(2, 1),
+];
+var asukoht = vektorid[0];
+for (var i = 1; i < vektorid.length; i++) {
+    asukoht = asukoht.liida(vektorid[i]);
+}
+asukoht.kuva();
 var v1 = new Vektor(3, 5);
 var vagun = new Vektor(9, -4);
 var energia = v1.skalaarkorrutis(vagun);
