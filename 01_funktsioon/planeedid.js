@@ -16,7 +16,7 @@ var Vektor = /** @class */ (function () {
     return Vektor;
 }());
 var planeedid = {
-    Maa: { g: 9.81, ρ: 1.225 },
+    Maa: { g: 9.81, ρ: 1.225 }, // m/s², kg/m³
     Kuu: { g: 1.62, ρ: 0 },
     Marss: { g: 3.71, ρ: 0.02 },
     Veenus: { g: 8.87, ρ: 65 },
@@ -28,7 +28,6 @@ var planeedid = {
 var mass = 70;
 var hüpeMaal = 0.5; // m
 var algkiirusMaal = Math.sqrt(2 * planeedid["Maa"].g * hüpeMaal); // v=sqrt(2gh)
-// Hüppe andmed
 function hüppeValem(planeet, nurk) {
     var g = planeedid[planeet].g;
     var ρ = planeedid[planeet].ρ;
@@ -37,7 +36,6 @@ function hüppeValem(planeet, nurk) {
     var hüppeAeg = (2 * algkiirus * Math.sin(nurkRad)) / g;
     var maxKõrgus = (Math.pow(algkiirus * Math.sin(nurkRad), 2)) / (2 * g);
     var horisontaalneKaugus = algkiirus * Math.cos(nurkRad) * hüppeAeg;
-    // Atmosfääri takistus
     if (ρ > 0) {
         var atmFaktor = Math.exp(-ρ / 10);
         maxKõrgus *= atmFaktor;
