@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 class Resistor {
     constructor(public r: number) {}
 

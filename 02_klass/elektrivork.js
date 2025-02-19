@@ -42,7 +42,7 @@ var Elektrivõrk = /** @class */ (function () {
 var minuVõrk = new Elektrivõrk(230, 10);
 minuVõrk.lisaTakisti(new Resistor(100));
 minuVõrk.lisaTakisti(new Resistor(200));
-minuVõrk.lisaTakisti(new Resistor(500));
+minuVõrk.lisaTakisti(new Resistor(10));
 minuVõrk.kuvaInfo();
 minuVõrk.lisaTakisti(new Resistor(50));
 minuVõrk.kuvaInfo();
