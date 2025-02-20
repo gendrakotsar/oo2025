@@ -40,10 +40,10 @@ var Elektrivõrk = /** @class */ (function () {
     };
     return Elektrivõrk;
 }());
-var minuVõrk = new Elektrivõrk(230, 10); // V, max lubatud A
+var minuVõrk = new Elektrivõrk(230, 10); // pinge V, max lubatud voolutugevus A
 minuVõrk.lisaTakisti(new Resistor(100));
 minuVõrk.lisaTakisti(new Resistor(200));
 minuVõrk.lisaTakisti(new Resistor(500));
 minuVõrk.kuvaInfo();
-minuVõrk.lisaTakisti(new Resistor(100));
+minuVõrk.lisaTakisti(new Resistor(500));
 minuVõrk.kuvaInfo();

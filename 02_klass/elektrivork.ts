@@ -47,7 +47,7 @@ class Elektrivõrk {
     }
 }
 
-let minuVõrk = new Elektrivõrk(230, 10); // V, max lubatud A
+let minuVõrk = new Elektrivõrk(230, 10); // pinge V, max lubatud voolutugevus A
 
 minuVõrk.lisaTakisti(new Resistor(100));
 minuVõrk.lisaTakisti(new Resistor(200));
@@ -55,5 +55,5 @@ minuVõrk.lisaTakisti(new Resistor(500));
 
 minuVõrk.kuvaInfo();
 
-minuVõrk.lisaTakisti(new Resistor(50));
+minuVõrk.lisaTakisti(new Resistor(500));
 minuVõrk.kuvaInfo();
