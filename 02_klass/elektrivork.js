@@ -1,3 +1,4 @@
+// @ts-nocheck
 var Resistor = /** @class */ (function () {
     function Resistor(r) {
         this.r = r;
@@ -32,17 +33,17 @@ var Elektrivõrk = /** @class */ (function () {
     };
     Elektrivõrk.prototype.kuvaInfo = function () {
         console.log("Elektrivõrk " + this.pinge + "V");
-        console.log("Kokku vool: " + this.getTotalCurrent().toFixed(2) + " A");
-        console.log("Kokku võimsus: " + this.getTotalPower().toFixed(2) + " W");
+        console.log("Kogu vool: " + this.getTotalCurrent().toFixed(2) + " A");
+        console.log("Kogu võimsus: " + this.getTotalPower().toFixed(2) + " W");
         console.log("Võrgu seisund: " + this.kasOhutu());
         console.log("---------------------");
     };
     return Elektrivõrk;
 }());
-var minuVõrk = new Elektrivõrk(230, 10);
+var minuVõrk = new Elektrivõrk(230, 10); // V, max lubatud A
 minuVõrk.lisaTakisti(new Resistor(100));
 minuVõrk.lisaTakisti(new Resistor(200));
-minuVõrk.lisaTakisti(new Resistor(10));
+minuVõrk.lisaTakisti(new Resistor(500));
 minuVõrk.kuvaInfo();
-minuVõrk.lisaTakisti(new Resistor(50));
+minuVõrk.lisaTakisti(new Resistor(100));
 minuVõrk.kuvaInfo();

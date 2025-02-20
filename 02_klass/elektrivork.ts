@@ -40,14 +40,14 @@ class Elektrivõrk {
 
     kuvaInfo() {
         console.log("Elektrivõrk " + this.pinge + "V");
-        console.log("Kokku vool: " + this.getTotalCurrent().toFixed(2) + " A");
-        console.log("Kokku võimsus: " + this.getTotalPower().toFixed(2) + " W");
+        console.log("Kogu vool: " + this.getTotalCurrent().toFixed(2) + " A");
+        console.log("Kogu võimsus: " + this.getTotalPower().toFixed(2) + " W");
         console.log("Võrgu seisund: " + this.kasOhutu());
         console.log("---------------------");
     }
 }
 
-let minuVõrk = new Elektrivõrk(230, 10);
+let minuVõrk = new Elektrivõrk(230, 10); // V, max lubatud A
 
 minuVõrk.lisaTakisti(new Resistor(100));
 minuVõrk.lisaTakisti(new Resistor(200));
