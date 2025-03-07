@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sõiduki simulatsioon</title>
+    <script src="kontrolltoo1_3.js" defer></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 600px;
+            position: relative;
+        }
+
+        .line {
+            position: relative;
+            width: 100%;
+            height: 5px;
+            background-color: black;
+            margin: 20px 0;
+        }
+
+        .point {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            top: -10px;
+        }
+
+        .markings {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+        }
+
+        .mark {
+            position: relative;
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sõiduki simulatsioon</h1>
+    <div class="container">
+        <div class="line" id="line"></div>
+        <div class="markings" id="markings"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const simulation = new CarSimulation([50, 70, 90]);
+            simulation.calculateDistances();
+            const distances = simulation.getDistances();
+            const maxDistance = 3.5; 
+
+            console.log("Distances:", distances);
+
+            const markingsContainer = document.getElementById('markings');
+            markingsContainer.innerHTML = "";
+
+            for (let km = 0; km <= maxDistance; km += 0.5) {
+                const mark = document.createElement('div');
+                mark.className = 'mark';
+                mark.style.width = `${100 / (maxDistance / 0.5)}%`;
+                mark.innerText = `${km} km`;
+                markingsContainer.appendChild(mark);
+            }
+
+            distances.forEach((distance, index) => {
+                const point = document.createElement('div');
+                point.className = 'point';
+                point.style.left = `${(distance / maxDistance) * 100}%`;
+
+                const colors = ["blue", "green", "red"];
+                point.style.backgroundColor = colors[index];
+
+                document.getElementById('line').appendChild(point);
+            });
+        });
+    </script>
+</body>
+</html>
